@@ -1,10 +1,10 @@
 # BrokenBlock
 PaperMC plugin for Minecraft.
 
-This plugin shows the block that was broken by the player and how many blocks the player has broken.
+This plugin shows the block that was broken by the player, and how many blocks the player has broken.
 
 ## Features
-* Chat command: Turn the displaying on and off. Display the information about a player.
+* Chat command: Turn the displaying on and off. Display the information about a player (how many blocks broken).
 * Everytime a block is broken (and the displaying is on) the player will recieve chat messages of what, and with what the block was broken. When hovering the broken block shows the id of the block, who, where and when the block was broken, while hovering the item used shows more information about the item.
 
 ## Commands
