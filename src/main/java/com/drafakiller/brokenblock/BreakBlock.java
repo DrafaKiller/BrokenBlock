@@ -31,23 +31,24 @@ public class BreakBlock implements Listener {
         Integer brokenAmount = player.getPersistentDataContainer().get(brokenAmountNameSpacedKey, PersistentDataType.INTEGER);
         player.getPersistentDataContainer().set(brokenAmountNameSpacedKey, PersistentDataType.INTEGER, brokenAmount != null ? brokenAmount + 1 : 0);
 
-        if (player.hasMetadata("brokenblock_enabled") && player.getMetadata("brokenblock_enabled").get(0).asBoolean()) {        Block block = event.getBlock();
+        if (player.hasMetadata("brokenblock_enabled") && player.getMetadata("brokenblock_enabled").get(0).asBoolean()) {
+            Block block = event.getBlock();
             ItemStack usedItem = player.getInventory().getItemInMainHand();
 
             Component component = Component.text("You broke ")
-                    .append(Component.translatable(block.getTranslationKey()).decoration(TextDecoration.BOLD, true).hoverEvent(
-                        Component.text()
-                            .append(Component.text("Broken Block").decorate(TextDecoration.BOLD))
-                            .append(Component.text("\nID: "))
-                            .append(Component.text("minecraft:" + block.getType().toString().toLowerCase()).color(NamedTextColor.GRAY))
-                            .append(Component.text("\nCoords: "))
-                            .append(Component.text("x " + block.getX() + ", y " + block.getY() + ", z " + block.getZ()).color(NamedTextColor.GRAY))
-                            .append(Component.text("\nPlayer: "))
-                            .append(Component.text(player.getName()).color(NamedTextColor.GRAY))
-                            .append(Component.text("\n" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(new Date())).color(NamedTextColor.GRAY))
-                            .build()
-                    ))
-                    .append(Component.text(" using "));
+                .append(Component.translatable(block.getTranslationKey()).decoration(TextDecoration.BOLD, true).hoverEvent(
+                    Component.text()
+                        .append(Component.text("Broken Block").decorate(TextDecoration.BOLD))
+                        .append(Component.text("\nID: "))
+                        .append(Component.text("minecraft:" + block.getType().toString().toLowerCase()).color(NamedTextColor.GRAY))
+                        .append(Component.text("\nCoords: "))
+                        .append(Component.text("x " + block.getX() + ", y " + block.getY() + ", z " + block.getZ()).color(NamedTextColor.GRAY))
+                        .append(Component.text("\nPlayer: "))
+                        .append(Component.text(player.getName()).color(NamedTextColor.GRAY))
+                        .append(Component.text("\n" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(new Date())).color(NamedTextColor.GRAY))
+                        .build()
+                ))
+                .append(Component.text(" using "));
 
             if (usedItem.getType() != Material.AIR) {
                 if (usedItem.hasItemMeta() && usedItem.getItemMeta().hasDisplayName()) {
