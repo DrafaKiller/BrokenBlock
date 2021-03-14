@@ -3,10 +3,10 @@ version: ${project.version}
 main: com.drafakiller.brokenblock.BrokenBlock
 api-version: 1.16
 authors: [ DrafaKiller ]
-description: BrokenBlock, displays information about the blocks that were broken. This plugin is a test, my first plugin.
+description: Displays information about the blocks broken by the player. This plugin was made for minecraft development learning, first plugin.
 website: drafakiller.com
 commands:
   brokenblock:
-    description: Displays the information about the block the player breaks in the chat.
+    description: Displays the information about the block that player breaks in the chat.
     aliases: [ bb ]
     usage: /brokenblock toggle <on/off> | /broken player [player_name]
